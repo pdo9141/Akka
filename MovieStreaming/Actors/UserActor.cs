@@ -6,13 +6,12 @@ namespace MovieStreaming.Actors
 {
     public class UserActor : ReceiveActor
     {
+        private readonly int _userId;
         private string _currentlyWatching;
 
-        public UserActor()
+        public UserActor(int userId)
         {
-            Console.WriteLine("Creating a UserActor");
-
-            ColorConsole.WriteLineCyan("Setting initial behavior to stopped");
+            _userId = userId;
             Stopped();
         }
 
@@ -43,6 +42,9 @@ namespace MovieStreaming.Actors
             _currentlyWatching = movieTitle;
 
             ColorConsole.WriteLineYellow(String.Format("User is currently watching '{0}'", _currentlyWatching));
+
+            Context.ActorSelection("/user/Playback/PlaybackStatistics/MoviePlayCounter")
+                .Tell(new IncrementPlayCountMessage(movieTitle));
 
             Become(Playing);
         }
