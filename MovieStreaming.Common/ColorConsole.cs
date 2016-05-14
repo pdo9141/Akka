@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MovieStreaming
+namespace MovieStreaming.Common
 {
     public static class ColorConsole
     {
@@ -15,7 +15,7 @@ namespace MovieStreaming
             Console.ForegroundColor = beforeColor;
         }
 
-        internal static void WriteWhite(string message)
+        public static void WriteWhite(string message)
         {
             var beforeColor = Console.ForegroundColor;
 
@@ -37,7 +37,7 @@ namespace MovieStreaming
             Console.ForegroundColor = beforeColor;
         }
 
-        internal static void WriteMagenta(string message)
+        public static void WriteMagenta(string message)
         {
             var beforeColor = Console.ForegroundColor;
 
@@ -48,7 +48,7 @@ namespace MovieStreaming
             Console.ForegroundColor = beforeColor;
         }
 
-        internal static void WriteLineGray(string message)
+        public static void WriteLineGray(string message)
         {
             var beforeColor = Console.ForegroundColor;
 

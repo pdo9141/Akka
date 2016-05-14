@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Akka.Actor;
-using MovieStreaming.Actors;
-using MovieStreaming.Messages;
+using MovieStreaming.Common.Actors;
+using MovieStreaming.Common.Messages;
+using MovieStreaming.Common;
 
 namespace MovieStreaming
 {
